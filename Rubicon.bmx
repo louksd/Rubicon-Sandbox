@@ -1,3 +1,6 @@
+'How can I port this to handheld devices?
+'Potential Devices include Play Date/Nintendo 3DS (400x240), Game Boy Advance (240x160...!), and Evercade/PSP (480x272)
+
 ?Win32
 Import "icon.o"
 ?
@@ -12,16 +15,16 @@ AppTitle = "Rubicon"
 ?
 
 Const OS = 0' slight tweaks depending on the OS in question (screen size, icon...) [ 0 = PC | 1 = MAC | 2 = LINUX ]
-Global SHIPSCALE# = 1.1 'how big ships, graphics are
+Global SHIPSCALE# = 1.1 'how big ships, graphics are (DL - Will be useful in smaller resolutions)
 
-'track the cursor position
+'track the cursor position (DL - switch to stick/button controls!)
 Global cursorx#,cursory#																	'could you say that the tracking is just... *cursory* ???
 HideMouse()
 
-'set up the graphic options
+'set up the graphic options (DL - start with 400 x 240, since those device SDKs are more available to me)
 Local RESO_OVERRIDE = 0
 Global FULLSCREEN = 0
-Global SWIDTH#=680,SHEIGHT#=400
+Global SWIDTH#=400,SHEIGHT#=240
 
 'set up the default control keys
 Global MOUSE_FIREPRIMARY, MOUSE_FIRESECONDARY
